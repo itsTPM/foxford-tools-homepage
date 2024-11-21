@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #app {
+    @apply min-h-dvh bg-[#0f0f0f];
+  }
+
+  #app {
+    @apply flex flex-col items-center justify-center text-zinc-200;
+  }
+}
