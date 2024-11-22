@@ -14,6 +14,11 @@ const mainLinks = [
     iconSrc: "/icons/github.svg",
     link: "https://github.com/itsTPM/foxford-tools",
   },
+  {
+    title: "Справка",
+    iconSrc: "/icons/docs.svg",
+    link: "https://foxwiki.itstpm.rocks",
+  },
 ];
 </script>
 
@@ -38,7 +43,11 @@ const mainLinks = [
         class="flex flex-col items-center justify-center w-full [&_li]:w-full gap-2"
       >
         <li v-for="link in mainLinks">
-          <Button as="a" class="relative pr-24 overflow-clip" :href="link.link">
+          <Button
+            as="a"
+            class="relative pr-24 overflow-clip min-h-[5.125rem]"
+            :href="link.link"
+          >
             <div class="flex flex-col justify-center">
               <span class="text-sm font-normal text-white/50">{{
                 link.subtitle
