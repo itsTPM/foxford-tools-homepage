@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <component :is="props.as" :type="props.as === 'button' ? button : null" class="button">
+  <component :is="props.as" :type="props.as === 'button' ? 'button' : null" class="button">
     <slot></slot>
   </component>
 </template>
