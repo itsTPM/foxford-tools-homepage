@@ -17,7 +17,7 @@ const mainLinks = [
   {
     title: 'Справка',
     iconSrc: '/icons/docs.svg',
-    link: 'https://foxwiki.itstpm.rocks',
+    link: 'https://foxwiki.lyosha.dev',
   },
 ];
 </script>
