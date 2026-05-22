@@ -1,0 +1,99 @@
+---
+import '../global.css';
+import Layout from '../layouts/Layout.astro';
+import Link from '../components/ui/Link.astro';
+import type { LinkItem } from '../types';
+
+const mainLinks: LinkItem[] = [
+  {
+    subtitle: 'установить для',
+    title: 'Chrome',
+    iconSrc: '/icons/chrome.svg',
+    href: 'https://chromewebstore.google.com/detail/foxford-tools/mmhgkmkmoepfpcakdkajpendcnjichhm',
+  },
+  {
+    subtitle: 'код на',
+    title: 'GitHub',
+    iconSrc: '/icons/github.svg',
+    href: 'https://github.com/itsTPM/foxford-tools',
+  },
+  {
+    title: 'Справка',
+    iconSrc: '/icons/docs.svg',
+    href: 'https://foxwiki.lyosha.dev',
+  },
+];
+---
+
+<Layout>
+  <main>
+    <section class="card">
+      <header class="card-header">
+        <img src="/icons/logo.svg" alt="" aria-hidden="true" class="logo" />
+        <div>
+          <h1 class="title">Foxford Tools</h1>
+          <p class="subtitle">кастомизация сайта Фокса</p>
+        </div>
+      </header>
+
+      <ul class="links">
+        {
+          mainLinks.map((link) => (
+            <li>
+              <Link href={link.href} title={link.title} subtitle={link.subtitle} iconSrc={link.iconSrc} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    @media (min-width: 20rem) {
+      padding: 3rem 2rem;
+      border: 1px solid rgb(255 255 255 / 0.05);
+      background-color: rgb(255 255 255 / 0.01);
+      box-shadow: 0px 0px 25px 0px rgb(0 0 0 / 0.5);
+    }
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .logo {
+    height: 6rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    letter-spacing: -0.025em;
+    font-weight: 500;
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+    color: rgb(255 255 255 / 0.5);
+  }
+
+  .links {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .links li {
+    width: 100%;
+  }
+</style>

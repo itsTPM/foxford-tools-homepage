@@ -1,0 +1,36 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Foxford Tools', description = 'Браузерное расширение для учеников Фоксфорда' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/icons/logo.svg" type="image/svg+xml" />
+
+    <link rel="canonical" href="https://fox.lyosha.dev" />
+
+    <meta property="og:site_name" content="Foxford Tools" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://fox.lyosha.dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://fox.lyosha.dev/banner.png" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
