@@ -1,15 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+}
 
-@layer base {
-  html,
-  body,
-  #app {
-    @apply min-h-dvh bg-[#0f0f0f];
-  }
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
 
-  #app {
-    @apply flex flex-col items-center justify-center text-zinc-200;
-  }
+ul,
+ol {
+  list-style: none;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.2;
+}
+
+html,
+body,
+#app {
+  min-height: 100dvh;
+  background-color: #0f0f0f;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e4e4e7;
 }
