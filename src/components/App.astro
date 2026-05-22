@@ -1,48 +1,48 @@
-<script setup>
-import Link from './components/ui/Link.vue';
+---
+import Link from './ui/Link.astro';
 
 const mainLinks = [
   {
     subtitle: 'установить для',
     title: 'Chrome',
     iconSrc: '/icons/chrome.svg',
-    link: 'https://chromewebstore.google.com/detail/foxford-tools/mmhgkmkmoepfpcakdkajpendcnjichhm',
+    href: 'https://chromewebstore.google.com/detail/foxford-tools/mmhgkmkmoepfpcakdkajpendcnjichhm',
   },
   {
     subtitle: 'код на',
     title: 'GitHub',
     iconSrc: '/icons/github.svg',
-    link: 'https://github.com/itsTPM/foxford-tools',
+    href: 'https://github.com/itsTPM/foxford-tools',
   },
   {
     title: 'Справка',
     iconSrc: '/icons/docs.svg',
-    link: 'https://foxwiki.lyosha.dev',
+    href: 'https://foxwiki.lyosha.dev',
   },
-];
-</script>
+] satisfies { subtitle?: string; title: string; iconSrc: string; href: string }[];
+---
 
-<template>
-  <main>
-    <section class="card">
-      <header class="card-header">
-        <img src="/icons/logo.svg" alt="" aria-hidden="true" class="logo" />
-        <div>
-          <h1 class="title">Foxford Tools</h1>
-          <p class="subtitle">кастомизация сайта Фокса</p>
-        </div>
-      </header>
+<main>
+  <section class="card">
+    <header class="card-header">
+      <img src="/icons/logo.svg" alt="" aria-hidden="true" class="logo" />
+      <div>
+        <h1 class="title">Foxford Tools</h1>
+        <p class="subtitle">кастомизация сайта Фокса</p>
+      </div>
+    </header>
 
-      <ul class="links">
-        <li v-for="link in mainLinks" :key="link.link">
-          <Link :href="link.link" :title="link.title" :subtitle="link.subtitle" :icon-src="link.iconSrc" />
+    <ul class="links">
+      {mainLinks.map((link) => (
+        <li>
+          <Link href={link.href} title={link.title} subtitle={link.subtitle} iconSrc={link.iconSrc} />
         </li>
-      </ul>
-    </section>
-  </main>
-</template>
+      ))}
+    </ul>
+  </section>
+</main>
 
-<style scoped>
+<style>
 .card {
   display: flex;
   flex-direction: column;
