@@ -1,10 +1,7 @@
 ---
-interface Props {
-  href: string;
-  title: string;
-  subtitle?: string;
-  iconSrc: string;
-}
+import type { LinkItem } from '../../types';
+
+type Props = LinkItem;
 
 const { href, title, subtitle, iconSrc } = Astro.props;
 ---

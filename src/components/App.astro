@@ -1,7 +1,8 @@
 ---
 import Link from './ui/Link.astro';
+import type { LinkItem } from '../types';
 
-const mainLinks = [
+const mainLinks: LinkItem[] = [
   {
     subtitle: 'установить для',
     title: 'Chrome',
@@ -19,7 +20,7 @@ const mainLinks = [
     iconSrc: '/icons/docs.svg',
     href: 'https://foxwiki.lyosha.dev',
   },
-] satisfies { subtitle?: string; title: string; iconSrc: string; href: string }[];
+];
 ---
 
 <main>
