@@ -15,62 +15,62 @@ const { href, title, subtitle, iconSrc } = Astro.props;
 </a>
 
 <style>
-.link {
-  padding: 1rem;
-  padding-right: 6rem;
-  border: 1px solid rgb(255 255 255 / 0.05);
-  background-color: rgb(255 255 255 / 0.02);
-  width: 100%;
-  font-size: 1.125rem;
-  font-weight: 500;
-  display: flex;
-  cursor: pointer;
-  user-select: none;
-  transition:
-    background-color 150ms ease,
-    border-color 150ms ease,
-    box-shadow 150ms ease;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
+  .link {
+    padding: 1rem;
+    padding-right: 6rem;
+    border: 1px solid rgb(255 255 255 / 0.05);
+    background-color: rgb(255 255 255 / 0.02);
+    width: 100%;
+    font-size: 1.125rem;
+    font-weight: 500;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      box-shadow 150ms ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
 
-  &:hover {
-    background-color: rgb(255 255 255 / 0.05);
-    border-color: rgb(255 255 255 / 0.1);
+    &:hover {
+      background-color: rgb(255 255 255 / 0.05);
+      border-color: rgb(255 255 255 / 0.1);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px var(--color-primary);
+    }
   }
 
-  &:focus {
-    outline: none;
+  .link-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  &:focus-visible {
-    box-shadow: 0 0 0 3px var(--color-primary);
+  .link-label {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgb(255 255 255 / 0.5);
   }
-}
 
-.link-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+  .link-name {
+    font-size: 1.75rem;
+  }
 
-.link-label {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: rgb(255 255 255 / 0.5);
-}
-
-.link-name {
-  font-size: 1.75rem;
-}
-
-.link-icon {
-  position: absolute;
-  width: 5.25rem;
-  height: auto;
-  right: -0.75rem;
-  bottom: -0.75rem;
-}
+  .link-icon {
+    position: absolute;
+    width: 5.25rem;
+    height: auto;
+    right: -0.75rem;
+    bottom: -0.75rem;
+  }
 </style>
