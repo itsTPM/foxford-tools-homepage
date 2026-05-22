@@ -34,7 +34,7 @@ const mainLinks = [
       </header>
 
       <ul class="links">
-        <li v-for="link in mainLinks">
+        <li v-for="link in mainLinks" :key="link.link">
           <Link :href="link.link" :title="link.title" :subtitle="link.subtitle" :icon-src="link.iconSrc" />
         </li>
       </ul>
