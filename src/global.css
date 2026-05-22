@@ -17,6 +17,10 @@ ol {
   list-style: none;
 }
 
+:root {
+  --color-primary: oklch(0.615 0.2024 26.81);
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.2;
