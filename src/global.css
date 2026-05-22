@@ -23,13 +23,12 @@ html {
 }
 
 html,
-body,
-#app {
+body {
   min-height: 100dvh;
   background-color: #0f0f0f;
 }
 
-#app {
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
